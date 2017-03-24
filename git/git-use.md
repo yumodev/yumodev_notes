@@ -1,11 +1,5 @@
----
-layout: post
-title: Git常用操作
-category: Git
-tags: [git]
-keywords: git
-description:
----
+<h1 align="center" >   Git常用操作 </h1>
+
      以前一直使用GitHub的图像客户的来操作自己版本库的提交和更新。现在感觉效率不高，虽下定决心要在命令行下面操作Git。所以我有必要把平时要使用Git命令整理一份文档出来，从而可以更熟练的使用Git。
 
 ### 基础配置

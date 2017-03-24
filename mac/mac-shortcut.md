@@ -1,12 +1,4 @@
----
-layout: post
-title: mac 常用快捷键
-category: mac
-tags: [快捷键]
-keywords: mac
-description: 
----
-#                    mac 常用快捷键 <br>
+<h1 align="center" >mac 常用快捷键</h1>
 
 ####  文件操作
 

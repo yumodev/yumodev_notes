@@ -1,11 +1,4 @@
----
-layout: post
-title: 线程基础-手动停止线程
-category: java
-tags: [java]
-keywords: java string
-description: 
----
+<h1 align="center" >线程基础-手动停止线程</h1>
 
       线程启动后，run()方法运行结束后，就标志着线程结束并正常退出了。可是在一些情况下，比如软件关闭时，需要停止一些尚在运行的进程。手动停止线程有三种方式  
       1、 Thread自带的stop()方法

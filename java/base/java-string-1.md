@@ -1,11 +1,4 @@
----
-layout: post
-title: String源码阅读分析
-category: java
-tags: [java]
-keywords: java string
-description: 
----
+<h1 align="center" >String 字符串的解析 </h1>
     java String类是一个使用频率非常高的类。借助分析String类的源码，有助于更好的了解java中字符串的操作，写出更加有效率的代码。
     
 ###     String 定义

@@ -1,11 +1,5 @@
----
-layout: post
-title: 反射-一个简单的实例应用
-category: java
-tags: [java高级]
-keywords: java 反射
-description: 
----
+<h1 align="center" >反射-一个简单的实例应用 </h1>
+
     反射就是通过一个类的名字或者实例，才操作它的属性和方法的机制。该机制在android开发中非常有用。因为android开发中很多API里的一些方法没有公开，就需要用反射机制才能使用它。
         
 ###    什么是Class

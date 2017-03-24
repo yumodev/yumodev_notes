@@ -1,12 +1,4 @@
----
-layout: post
-title: Ubuntu 安装 Tomcat
-category: javaWeb
-tags: [java,tomcat]
-keywords: java tomcat ubuntu linux
-description: 
----
-
+<h1 align="center" >Ubuntu 安装 Tomcat</h1>
 ### 安装JDK
 
 * 从官网下载JDK，下载路径 http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-linux-x64.tar.gz

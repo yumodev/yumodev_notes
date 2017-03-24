@@ -1,12 +1,3 @@
----
-layout: post
-title: Git-分支常用命令
-category: Git
-tags: []
-keywords: git
-description: 
----
-
 <h1 align="center" >   Git常用命令－分支 </h1>
 
 ### 基本分支管理

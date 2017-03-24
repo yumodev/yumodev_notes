@@ -1,12 +1,4 @@
----
-layout: post
-title: Mac下安装Tomcat
-category: javaWeb
-tags: [java]
-keywords: java tomcat mac
-description: 
----
-
+<h1 align="center" >Mac下安装Tomcat</h1>
 ### 一、下载tomcat
 
 打开 tomcat官网 [http://tomcat.apache.org/](http://tomcat.apache.org/) 选择合适的版本下载

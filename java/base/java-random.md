@@ -1,11 +1,5 @@
----
-layout: post
-title: java 随机数－常用操作集合。
-category: java
-tags: [java]
-keywords: java 反射
-description: 
----
+<h1 align="center" >java 随机数－常用操作集合</h1>
+
    随机数用的场合非常多，但是使用起来并不复杂，非常的简单。下面就是他的一些列方法的使用
       
         Random random = new Random(100);
