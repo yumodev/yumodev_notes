@@ -1,7 +1,16 @@
+
 开发笔记 工作和学习过程中的一些积累，会持续维护。
 
-* auto-gen TOC:
-{:toc}
+[toc]
+
+- [Java](#java)
+    - [Java基础](#java)
+    - [Java多线程](#java)
+- [Android](#android)
+- [Git](#git)
+- [工具](#)
+    - [Mac](#mac)
+    - [Tomcat](#tomcat)
 
 ## Java
 
@@ -33,5 +42,8 @@
 
 * [Ubuntu 安装 Tomcat](./tomcat/tomcat-install-ubuntu.md)
 * [Mac 安装 Tomcat](./tomcat/tomcat-install-mac.md)
+
+
+
 
 
