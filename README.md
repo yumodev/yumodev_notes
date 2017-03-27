@@ -1,8 +1,6 @@
-
 开发笔记 工作和学习过程中的一些积累，会持续维护。
 
-[toc]
-
+目录
 - [Java](#java)
     - [Java基础](#java)
     - [Java多线程](#java)
@@ -11,6 +9,9 @@
 - [工具](#)
     - [Mac](#mac)
     - [Tomcat](#tomcat)
+    - [ShadowSocks](#shadowsocks)
+
+[toc]
 
 ## Java
 
@@ -25,7 +26,7 @@
 * [线程基础 -线程的创建与执行](./java/thread/java-thread-001.md)
 * [线程基础-手动停止线程](./java/thread/java-thread-002.md)
 
-## Android 
+## Android
 
 ## Git
 
@@ -47,8 +48,3 @@
 
 * [Shadowsocks中Ubuntu中的使用](./fanqian/shadowsocks-ubuntu.md)
 * [Mac终端下使用ShadowScoks](./fanqian/shadowsocks-mac.md)
-
-
-
-
-
