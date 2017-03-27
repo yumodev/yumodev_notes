@@ -43,6 +43,11 @@
 * [Ubuntu 安装 Tomcat](./tomcat/tomcat-install-ubuntu.md)
 * [Mac 安装 Tomcat](./tomcat/tomcat-install-mac.md)
 
+### ShadowSocks
+
+* [Shadowsocks中Ubuntu中的使用](./fanqian/shadowsocks-ubuntu.md)
+* [Mac终端下使用ShadowScoks](./fanqian/shadowsocks-mac.md)
+
 
 
 
