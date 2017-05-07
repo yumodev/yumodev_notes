@@ -10,6 +10,8 @@
     - [Mac](#mac)
     - [Tomcat](#tomcat)
     - [ShadowSocks](#shadowsocks)
+    - [Atom](#atom)
+
 
 [toc]
 
@@ -52,3 +54,7 @@
 
 * [Shadowsocks中Ubuntu中的使用](./fanqian/shadowsocks-ubuntu.md)
 * [Mac终端下使用ShadowScoks](./fanqian/shadowsocks-mac.md)
+
+### Atom
+
+* [ATOM中使用PlantUML](./atom/atom_plantuml.md)
