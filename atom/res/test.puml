@@ -1,0 +1,7 @@
+@startuml
+start
+:first;
+:second;
+:end;
+stop
+@enduml
