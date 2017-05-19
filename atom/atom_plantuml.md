@@ -25,10 +25,10 @@
   * plantuml-preview
 
     安装安装完成Plantuml-preview 插件后需要进行设置
-    
-    1.设置Grahvis Dot Executable的路径。
-    2.设置PlantUML Jar的路径。
-    3.设置导出图片的格式和路径。
+
+    1. 设置Grahvis Dot Executable的路径。
+    2. 设置PlantUML Jar的路径。
+    3. 设置导出图片的格式和路径。
       默认是SVG格式和USE Temp Directory.我在设置导出为png格式且导出路径为文件所在的目录。
 
     ![setting](./res/plantuml_preview_setting.png)
