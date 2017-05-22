@@ -8,6 +8,12 @@
 
 * [Kotlin博客](http://www.kotliner.cn/)
 
+### 学习资源
+
+* [Try Kotlin:](https://try.kotlinlang.org/#/Examples/Hello,%20world!/Simplest%20version/Simplest%20version.kt) 在线练习题
+* [Awesome Kotlin](https://github.com/mcxiaoke/awesome-kotlin)
+* [Kotlin 资源大全](https://juejin.im/post/591dd9f544d904006c9fbb96)
+* [Java和Kotlin的比较](https://fabiomsr.github.io/from-java-to-kotlin/)
 ### 开发工具
 
 * [Swift转换为Kotlin](https://github.com/angelolloqui/SwiftKotlin)
@@ -27,9 +33,6 @@
 ### 优秀文章
 
 #### 总结
-
-* [Awesome Kotlin](https://github.com/mcxiaoke/awesome-kotlin)
-* [Kotlin 资源大全](https://juejin.im/post/591dd9f544d904006c9fbb96)
 
 #### Kotlin 基础
 
