@@ -1,0 +1,35 @@
+@startuml
+title Atlas主要类图
+
+class Atlas{
++ static String : sAPKSource
++ static boolean : Downgrade_H5
++ void : startUp(Application, boolean isUpdated)
++ void : checkDownGradeToH5(Intent intent)
++ Bundle : getBundle(String location)
++ List<Bundle> : getBundles()
++ ClassLoader : getBundleClassLoader(String location)
++ File : getBundleFile(String location)
++ void : addBundleListener(BundleListener)
++ void : removeBundleListener(BundleListener)
++ void : setClassNoteFoundInterceptorCallback(callBack)
++ void : installBundleTransitivelyAsync(String[] locations,BundleInstaller.InstallListener)
++ void : installIdleBundleTransitively(String location,BundleInstaller.InstallListener);
+}
+
+interface bundle{
+  + static final int : UNINSTALLED
+  + static final int : INSTALLED
+  + static final int : RESOLVED
+  + static final int : STARTING
+  + static final int : STOPPING
+  + static final int : ACTIVE
+  + int  : getState
+  + void : start
+  + void : stop
+  + void : uninstall
+  + long : getBundleId
+  + String : getLocation
+  + URL : getResource(String name)
+}
+@enduml
