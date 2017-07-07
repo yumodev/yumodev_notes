@@ -1,11 +1,13 @@
-## Activity 总结
+# Activity 总结
 
-### 什么是Activity
+## 什么是Activity 
 
 * Activiy是Android的四大组件之一，是和用户进行交互的解决方案，
   Activity是负责和用户交互的组件，让用户的看的至关重要。一个Activity是一个页面，也是一个容器，里面可以存放不同的小页面。
   
 * Activity是Context的子类，同时实现了Window.callback和keyEvent.callback所以可以与用户进行交互
+
+## Activity的生命周期
      
 ### Activity的生命周期
 
@@ -14,25 +16,40 @@
 * OnResume:进入前台时进入
 * OnPause：离开前台时进入
 * OnStop：退出前台时进入
-* onDestory:Activity销毁时进入。一般用来释放一些资源
-* 一个Activity启动的时候的生命周期为：OnCreate->OnStart->OnResume
-* 从当前Activity进入另外一个Activity时候的生命周期为：
-onPause->onSaveInstanceState->onStop
-* 从另外一个页面至少需要onStart，onResume两个周期
-* 点击home键后的生命周期为：
-onPause->onSaveInstanceState
+* onDestory:Activity销毁时进入。
 
+### Activity启动的周期为
 
-### 如何退出Activity？如何安全推出已调用多个的Activity的App
-* 在把Activity实例放到列表里面，推出时循环遍历finish掉。
+* 启动 ：onCreate->onStart->onResume
+* 失去焦点 ：onPause
+* 获取焦点 ：onResume
+* 进入后台 ：onPause->onResume
 
-### 后台或者异常推出时，如何保存数据
-onSaveInstanceState 和 onRestoreInstanceState();
+### ActivityA切换到 ActivityB的周期流程
+
+A.onPause->B.onCreate->B.onStart->B.onResume->A.onStop
+
 ### Activity在屏幕旋转时候的生命周期是：
+
 不设置Activity的android：configChanges时，切屏会重新调用各个生命周期，切横屏时会执行一次，切竖屏时执行两次
 当在xml中对该Activity进行android:configChanges="orienation|keyboardHidden"时，切屏不会在重新调用各个周期，只会调用onConfigurationChanged()方法。
 当在xml中对该Activity进行android:configChanges="orienation"时，切屏还会重新调用各个周期，切横、树屏时只会执行一次。
 如果要销毁Actiity时，除了调用一切生命周期以外，还会调用onSaveInstanceState 和 onRestoryInstanceState();
+
+### Activity在onStart之前做了什么
+
+### home键后Activity执行了什么方法。
+  onPause->onSaveInstanceState->onStop
+
+### Activity的三种状态
+
+一个Activity基本上有三个生命状态。
+Active状态：在前台显示，并且可以交互
+Pause状态：虽然在前台显示，但是已经不能和用户狡猾
+stop状态：activity的后台状态，已经被完全的隐藏起来，用户看不到了。
+
+## 启动模式
+
 ### 默认四种模式 adb shell dumpsys activity 查看任务栈
 standard 默认， singleTop，singleTask，singleInstance  可以在xml的launchMode来配置
 
@@ -51,40 +68,63 @@ standard 默认， singleTop，singleTask，singleInstance  可以在xml的launc
  * 栈位于Framwork层，使一组Activity的集合。
  * 栈是可以跨应用的，比如发送邮件。
  * taskAffnity 属性，可以将栈进行分组。如果activity不设置taskAffnity属性，那么它的默认值就是包名，如果设置为空，那么该Activity将不属于任何一个栈。
-### Activity在onStart之前做了什么
 
-### home键后Activity执行了什么方法。
-  onPause->onSaveInstanceState->onStop
-### 设置Activity的样式
+### 在同一个程序中，不同的Activity中，是否可以放在不同的Task任务栈中。
 
-  * 设置窗口样式
-   android:theme="@android:style/Theme.Dialog"
-  * 设置透明窗口样式
-  
+可以放在不同的任务栈中，需要为不同的activity设置不同的taskaffinity属性，启动activity的Intent需要包含FLAG_ACTIVITY_NEW_TASK标记。
+
 ### Activity的两种启动方式
-* 显示启动
+
+* 显示启动 
+
+显示启动直接指定组件的名称进行启动。
+  
   `startActivity(new Intent(FirstActivity.this, SecondActitiy.class))`
+  
 * 隐式启动
   
-```Intent intent ＝ new Intent("com.yumo.android.intentstart");
-  intent.addCategory("com.yumo.addroid.category");//可以选。如果没有设置，那么默认的类别就是android.intent.category.DEFAULT
-  startActivity(intent);
+隐式启动不需要指定明确的组件信息，它通过Intent指定的匹配规则和组件的IntentFilter进行匹配。
+
 ```
-### Android的应用中所有的Activity都必须运行在同一个线程中吗？
+Intent intent ＝ new Intent("com.yumo.android.intentstart");
+intent.addCategory("com.yumo.addroid.category");//可以选。如果没有设置，那么默认的类别就是android.intent.category.DEFAULT
+startActivity(intent);
+```
+
+### IntentFilter匹配规则
+
+IntentFileter的过滤信息有：action,category,data.
+隐式启动时需要同时匹配action，category，data才能匹配成功。
+一个组件可以设置多组intent-filter，只要匹配一组就算成功。
+
+## Activity 多进程
+
+### Android的应用中所有的Activity都必须运行在同一个进程中吗？
 不同的Activity可以运行在不同的进程当中，但是在默认的情况下四大组件都是运行在一个进程里面的。
 
 * 如果所有的Activity运行在一个进程当中，可以降低整个应用的不同组件之间的藕合度。
 * 要想让Activity运行在独立的进程中，则需要在Androidmanifest.xml中对Activity的属性Android:process="value"进行配置，value的值就是此Activity所在的进程的进程名字。如果进程名以“：”开头表示私有进程，如果进程名以小写字母开头，则为全局进程。
 * 进程之间主要看Binder机制通信。
-### 在同一个程序中，不同的Activity中，是否可以放在不同的Task任务栈中。
 
-可以放在不同的任务栈中，需要为不同的activity设置不同的taskaffinity属性，启动activity的Intent需要包含FLAG_ACTIVITY_NEW_TASK标记。
-### Activity的三种状态
+## 退出Activity
 
-一个Activity基本上有三个生命状态。
-Active状态：在前台显示，并且可以交互
-Pause状态：虽然在前台显示，但是已经不能和用户狡猾
-stop状态：activity的后台状态，已经被完全的隐藏起来，用户看不到了。
+### 如何退出Activity？如何安全推出已调用多个的Activity的App
+* 在把Activity实例放到列表里面，推出时循环遍历finish掉。
+
+### 后台或者异常推出时，如何保存数据
+
+onSaveInstanceState 和 onRestoreInstanceState();
+
+## 设置Activity的样式
+
+* 设置窗口样式
+android:theme="@android:style/Theme.Dialog"
+* 设置透明窗口样式
+  
+
+
+
+
 
 
 
