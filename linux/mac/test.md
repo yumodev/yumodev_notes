@@ -1,0 +1,4 @@
+###
+
+netstat -antp | grep LISTEN
+

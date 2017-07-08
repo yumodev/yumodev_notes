@@ -1,0 +1,37 @@
+### linux apt-get
+
+  * 安装 sudo apt-get install gradle
+  * 查看 gradle -v
+  * 卸载 sudo apt-get remove gralde
+
+### linux 自定义安装
+
+  * 下载 wget http://services.gradle.org/distributions/gradle-2.14.1-bin.zip
+  * 解压移动目录 sudo unzip gradle-2.14.1-bin.zip -d /opt/
+  × 配置环境变量 sudo vim /etc/profile
+
+  export GRADLE_HOME=/opt/gradle-2.14.1
+  export PATH=$GRADLE_HOME/bin:$PATH
+
+
+  * 应用环境变量
+
+  sudo -s
+  source /opt/profile
+
+  * 测试安装成功 gradle -v
+
+
+  root@yumo-ubuntu:/opt/gradle-2.14.1# gradle -v
+
+------------------------------------------------------------
+Gradle 2.14.1
+------------------------------------------------------------
+
+Build time:   2016-07-18 06:38:37 GMT
+Revision:     d9e2113d9fb05a5caabba61798bdb8dfdca83719
+
+Groovy:       2.4.4
+Ant:          Apache Ant(TM) version 1.9.6 compiled on June 29 2015
+JVM:          1.7.0_95 (Oracle Corporation 24.95-b01)
+OS:           Linux 4.4.0-31-generic amd64
