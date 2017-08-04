@@ -8,3 +8,7 @@
 ./gradle2 :app:dependencies
 ```
 
+## 重新下载依赖库
+
+`gradlew assemble --refresh-dependencies`
+
