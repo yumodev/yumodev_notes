@@ -10,6 +10,8 @@
 
 ### ImportError: No module named flaskext.wtf
 
+pip install -U Flask-WTF
+ 
 flask0.9.0 之后，Flask-WTF will not import anything from wtforms, you need to import fields from wtforms.
 所以你要这样：
 
