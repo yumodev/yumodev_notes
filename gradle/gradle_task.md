@@ -5,6 +5,10 @@
 
 ```
 ./gradlew  dependencies
-./gradle2 :app:dependencies
+./gradlew :app:dependencies
 ```
+
+## 重新下载依赖库
+
+`gradlew assemble --refresh-dependencies`
 

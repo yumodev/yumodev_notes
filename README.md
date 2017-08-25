@@ -30,15 +30,26 @@
 
 ## Android
 
+### Framework
+
+* [Activity总结](./android/framework/activity.md)
+* [Service总结](./android/framework/service.md)
+
+### 基础
+
+### 进阶
+
+
+### Sqlite
+
+* [Sqlite3命令](./android/sqlite/sqlite_cmd.md)
+
 ## Python
 
 ### Flask
 
 * [Flask安装](./python/)
 
-### Sqlite
-
-* [Sqlite3命令](./android/sqlite/sqlite_cmd.md)
 
 ## Git
 
