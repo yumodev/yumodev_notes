@@ -7,7 +7,7 @@ adb shell dumpsys cpuinfo | grep packagename
 
 ### top
 
-adb shell top-m 10 -s cpu
+adb shell top -m 10 -s cpu
 adb shell top -n 1 | grep packgename
 
 
@@ -21,8 +21,8 @@ adb shell top -t -s cpu -d 2 -m 5
 -n num : 刷新次数
 -d num : 刷新的间隔时间，单位是秒 默认是5秒
 -s col : 按照那一列排序，比如 -s cpu 标识按照CPU排序。
--t :显示线程信息，而不是进程。
--h :显示帮助文档。
+-t : 显示线程信息，而不是进程。
+-h : 显示帮助文档。
 #### 使用方法
 
 * 打印到文件
@@ -72,3 +72,5 @@ adb shell top -t -s cpu -d 2 -m 5
 * RSS : Resident Set Size 虚拟使用的物理内存包含共享库的占用的内存。
 * PCY : 进程所有者的优先级 fg： bg：
 * Name : 进程名字
+
+
