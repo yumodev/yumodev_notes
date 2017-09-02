@@ -1,11 +1,11 @@
-### WebSettings
-
+## WebSettings
 
 ### WebSettings 属性
 
 ### WebSettings 方法
 
 * setAllowContentAccess 
+
 * setAllowFileAccess
 
 	是否允许访问文件

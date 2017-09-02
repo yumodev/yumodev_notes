@@ -39,7 +39,8 @@ A.onPause->B.onCreate->B.onStart->B.onResume->A.onStop
 ### Activity在onStart之前做了什么
 
 ### home键后Activity执行了什么方法。
-  onPause->onSaveInstanceState->onStop
+
+onPause->onSaveInstanceState->onStop
 
 ### Activity的三种状态
 
