@@ -1,8 +1,8 @@
-###document对象
+### document对象
 使用Window.document属性返回一个document对象。代表当前Window内加装的文档。window可以忽略。
 
 
-###方法和属性
+### 方法和属性
 
 * 集合
 
@@ -71,28 +71,25 @@
      renameName()|重命名元素或者属性节点
      write()|向文档写HTML表达式或者JavaScript代码
 	writeln()|等同于Write()方法，不同的是在么个表达式之后写一个换行符。
-	   
+
 ###属性
 
 * cookie
 
 	返回字符串的形式
-	
-* readyState 
+
+* readyState
 
    返回文档的状态，三种状态
-   
+
 	 值|说明
 	  ------|------
 	  loading|文档正在加载
 	  interactive|文档已加载，链接资源未完全加载
 	  complete|文档和链接资源完全加载
-	  
+
 * designModel
-  
+
   设置文档是否可以编辑；
   值on：html文档可以被编辑，等价于body的contenteditable属性设置为true，但是此时会忽略元素的contenteditable属性。
   值off:html文档不可以别编辑
-	  
-	  
-

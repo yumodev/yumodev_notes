@@ -6,9 +6,25 @@
     sudo apt-get install google-chrome-stable
 
 
-   
+
 
 ### remove source list
 
    ls /etc/apt/sources.list.d
    sudo rm /etc/apt/sources.list.d/myppa.list
+
+
+### pdf
+
+      sudo apt-get install okular
+
+### rar
+
+      sudo apt-get install okular
+
+     rar -x a.rar
+     rar a fileName.rar dirname
+
+  ### 安装Git
+
+       apt-get install git
