@@ -1,40 +1,11 @@
 开发笔记 工作和学习过程中的一些积累，会持续维护。
 
-- [面试](#)
+目录
 - [Java](#java)
     - [Java基础](#java)
-    - [Java进阶](#java)
     - [Java多线程](#java)
-    - [Java集合](#java)
-    - [IO和字符串](#io)
-    - [Java读书札记](#java)
 - [Android](#android)
-    - [Framework](#framework)
-    - [View和控件](#view)
-    - [Android开发基础](#android)
-    - [Android开发进阶](#android)
-    - [IO和存储](#io)
-    - [开发工具](#)
-    - [性能优化](#)
-    - [进程和线程](#)
-    - [多媒体开发](#)
-    - [插件化](#)
-    - [WebView](#webview)
-    - [RxJava](#rxjava)
-- [JavaScript](#javascript)
-    - [JavaScript基础](#javascript)
-    - [Window](#window)
-- [Python](#python)
-    - [Flask](#flask)
-- [设计模式](#)
-- [网络](#)
 - [Git](#git)
-- [Linux](#linux)
-    - [Linux命令](#linux)
-    - [软件及日常日用](#)
-    - [Shell](#shell)
-    - [Vi](#vi)
-    - [软件使用](#)
 - [工具](#)
     - [Mac](#mac)
     - [Tomcat](#tomcat)
@@ -299,8 +270,5 @@
 ### Atom
 
 * [ATOM中使用PlantUML](./atom/atom_plantuml.md)
-
-
-
 
 
