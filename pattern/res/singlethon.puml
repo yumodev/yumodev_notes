@@ -1,7 +1,9 @@
 @startuml
-class client{
-}
+skinparam classAttributeIconSize 0
 
 class Singleton{
+  - static Singleton mInstance
+  - Singleton()
+  + static Singleton getInstance()
 }
 @enduml

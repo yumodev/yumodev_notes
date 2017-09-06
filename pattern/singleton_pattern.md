@@ -8,53 +8,93 @@
 
 ![](./res/singlethon.png)
 
-## 单例模式的几种写法
+## 一个单例模式的例子 
 
-### 饿汉模式
+```
+public class Singleton {
+    //自行生成一个类的实例。
+    private static Singleton mInstance;
+
+    //私有化构造方法。
+    private Singleton(){}
+
+    //提供获取一个类的实例的接口
+    public static Singleton getInstance(){
+        if (mInstance == null){
+            mInstance = new Singleton();
+        }
+        return mInstance;
+    }
+
+    public static void main(String[] args){
+        Singleton obj1 = Singleton.getInstance();
+        Singleton obj2 = Singleton.getInstance();
+        if (obj1 == obj2){
+            System.out.println("obj1 和 obj2 对象相同");
+        }else{
+            System.out.println("obj1 和 obj2 对象不同");
+        }
+    }
+}
+```
+
+在这个例子中定义了一个单例类Singleton，通过其静态公开方法getInstance()获取其实例。
+然后在main方法中测试验证`Singleton.getInstance()`获取到的实例是否相同。
+
+Singleton类有一个特点就是其构造函数是private，这就能够保证我们不能直接通过 `new Singleton()`生成Singleton类的实例。
+
+## 单例模式的其他实现方式
+
+### 懒汉模式
+
+示例中Singleton类，如果是在单线程环境下是能够正常工作的，如果在高并发的环境下，有可能出现问题。在多个线程同时调用`Singleton.getInstance()`生成单例的时候，有可能对生成多个单例。
+这种情况下，我们可以利用线程的同步机制来保证只能生成一个单例,因为类的实例是在第一次使用的时候才初始化，所以称为懒汉模式。
+
+```
+public class Singleton {
+    //自行生成一个类的实例。
+    private static Singleton mInstance;
+
+    //私有化构造方法。
+    private Singleton(){}
+
+    //提供获取一个类的实例的接口
+    public synchronized static Singleton getInstance(){
+        if (mInstance == null){
+            mInstance = new Singleton();
+        }
+        return mInstance;
+    }
+ }
+ ```
+
+懒汉模式能够保证在多线程环境下生成唯一的实例，第一次使用的时候才初始化，但是每次调用 `Singleton.getInstance()`都进行同步，造成了不必要的同步开销。
+
+### DCL(Double Check Lock)
+
 
 
 ```
-public class Singleton{
-        //自行生成一个类的实例。
-   		private static final Singleton mInstance = new Singleton();
+public class Singleton {
+    //自行生成一个类的实例。
+    private static Singleton mInstance;
 
-		//私有化构造方法。
-   		private Singleton(){};
+    //私有化构造方法。
+    private Singleton(){}
 
-		//提供获取一个类的实例的接口
-   		public static Singleton getInstance(){
-   			return mInstance;
-   		}
-   }
+    //提供获取一个类的实例的接口
+    public static Singleton getInstance(){
+        if (mInstance == null){
+            synchronized (Singleton.class){
+                mInstance = new Singleton();
+            }
+        }
+        return mInstance;
+    }
+}
 ```
 
 
-###   懒汉模式
-
-```
-public class Singleton{
-        //自行生成一个类的实例。
-   		private static Singleton mInstance = null;
-
-		//私有化构造方法。
-   		private Singleton(){};
-
-		//提供获取一个类的实例的接口
-   		public synchronized static Singleton getInstance()
-   		{
-	   		if(mInstance == null)
-	   		{
-	   			mInstance = new Singleton();
-	   		}
-   			return mInstance;
-   		}
-
-   		public static void function(){
-
-   		}
-   }
-
-```
 ## 单例模式的优缺点
 
 ### 优点
@@ -89,3 +129,5 @@ public class Singleton{
 
 ### Jvm的内存回收 。
    	     单例模式的一个类的实例咋长时间不使用的情况下有可能被jvm回收，然后重新生成一个新的实例，比如在计数器等应用情况的下会出现一些问题，需要特殊处理。
+
+
