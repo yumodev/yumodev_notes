@@ -153,6 +153,7 @@
 * [虚拟机](./android/advance/虚拟机.md)
 * [ANR](./android/advance/ANR.md)
 * [LRU](./android/advance/lru.md)
+* [分屏模式](./android/advance/分屏.md)
 
 ### IO和存储
 
@@ -233,6 +234,7 @@
 ### 基础
 
 * [enumerate](./python/base/enumerate.md)
+
 ### Flask
 
 * [Flask安装](./python/)
@@ -306,3 +308,5 @@
 ### Atom
 
 * [ATOM中使用PlantUML](./atom/atom_plantuml.md)
+
+
