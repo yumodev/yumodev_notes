@@ -1,0 +1,23 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+Product <|-- ConcreteProduct
+Factory <|-- ConcreteFactory
+ConcreteProduct <.. ConcreteFactory
+
+abstract class Product{
+  + abstract void mothod()
+}
+
+class ConcreteProduct{
+  + void mothod();
+}
+
+abstract class Factory{
+  + abstract Product createProduct();
+}
+
+class ConcreteFactory{
+  + Product createProduct();
+}
+@enduml
