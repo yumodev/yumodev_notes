@@ -1,10 +1,10 @@
-### LRU
+# LruCache缓存以及源码解析
 
-最近最少使用的原则，利用ListedHashMap来实现
+## LruCache
 
-### ListHashMap
+## LinkedHashMap
 
-是HashMap的子类。
+## LruCache源码
 
 
 
