@@ -96,6 +96,7 @@
 * [集合类](./java/collect/collect_class.md)
 * [Collect](./java/collect/collect.md)
 * [HashMap](./java/collect/hashMap.md)
+* [LinkedHashMap使用和LRU的实现](./java/collect/linkedhashmap_lru.md)
 * [List](./java/collect/list.md)
 * [集合总结](./java/collect/java集合.md)
 
@@ -244,6 +245,7 @@
 * [设计原则](./pattern/pattern_principle.md)
 * [单例模式-Singleton](./pattern/singleton_pattern.md)
 * [工厂模式-Factory](./pattern/factory_pattern.md)
+* [抽象工厂模式-AbstractFactory](./pattern/abstract_factory_pattern.md)
 * [建造者模式-Builder](./pattern/build_pattern.md)
 * [代理模式-Proxy](./pattern/proxy_pattern.md)
 * [装饰器模式-Decorator](./pattern/decorator_pattern.md)

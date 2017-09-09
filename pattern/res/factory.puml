@@ -1,6 +1,5 @@
 @startuml
 skinparam classAttributeIconSize 0
-
 Product <|-- ConcreteProduct
 Factory <|-- ConcreteFactory
 ConcreteProduct <.. ConcreteFactory
@@ -20,4 +19,5 @@ abstract class Factory{
 class ConcreteFactory{
   + Product createProduct();
 }
+
 @enduml
