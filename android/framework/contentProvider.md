@@ -7,8 +7,9 @@
 
 注册一个ContentObderver实现监听。接受onChange方法。
      
-### 为什么要使用contentProvider 和sqlite的区别是什么呢
+### 为什么要使用contentProvider？ 它和sqlite的区别是什么呢
 
 ### ContentProvider是如何实现共享的。 
+   
    一个程序可以通过实现一个ContentProvider的抽象接口将自己的数据完全暴露出去，而且ContentProviders是以类似数据库表的方式将数据暴露。Contentproviders存储和检索数据，通过它可以让所有的应用程序访问到，这是应用程序之间为宜共享数据库的犯法。
 

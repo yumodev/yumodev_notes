@@ -56,6 +56,21 @@ Or, if you don't want/need a background service you can just run:
     netstat -an | grep 8118
     ps aux  | grep privoxy
 
+### 配置Terminal的http走811端口
+
+
+```
+export http_proxy='http://localhost:8118'
+export https_proxy='http://localhost:8118'
+```
+
+### 取消HTTP/HTTPS代理
+
+```
+unset http_proxy
+unset https_proxy
+```
+
 ### git 配置
 
 	git config --global http.proxy 127.0.0.1:8118
@@ -64,7 +79,7 @@ Or, if you don't want/need a background service you can just run:
 	
 ### 参考使用
 
-  [Mac OS下使用Privoxy做中转代理](http://tblog.im/2015/09/23/shi-yong-privoxyzhong-zhuan/)
-  [使用Privoxy做智能代理切换](http://blog.devtang.com/2012/12/08/use-privoxy/)
+ *  [使用Privoxy做智能代理切换](http://blog.devtang.com/2012/12/08/use-privoxy/)
+ *  [Mac上通过Privoxy将shadowsocks的流量使用pac代理给手机iOS安卓](http://www.akmumu.com/2015/07/07/367.html)
 
 

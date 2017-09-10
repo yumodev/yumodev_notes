@@ -1,13 +1,17 @@
+# 安装HomeBrew
 
-#mac 下常见的安装
 
-* wget
+```
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
 
-   brew install wget 
+# mac 下常见的安装
+
+* wget: brew install wget 
+
 # bug解决
 
 * Error: Cannot write to /usr/local/Cellar
-
 
 ```
 查看权限:ls -ld /usr/local/Cellar
