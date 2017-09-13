@@ -1,0 +1,19 @@
+
+
+@startuml
+skinparam classAttributeIconSize 0
+Prototype <|.. ConcreteProtoType
+Client <.. Prototype : Uses
+
+class Client{
+}
+
+interface Prototype{
+  + createClone();
+}
+
+class ConcreteProtoType{
+    + createClone();
+}
+
+@enduml

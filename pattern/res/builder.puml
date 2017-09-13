@@ -1,0 +1,26 @@
+@startuml
+skinparam classAttributeIconSize 0
+Builder <|-- ConcreteBuilder
+Director o.. Builder : 组装
+Product <.. Builder : 创建产品
+
+class Director{
+  Builder mBuilder;
+}
+
+abstract class Builder{
+  + {abstract} void buildPart1();
+  + {abstract} void buildPart2();
+  + Product buildProduct();
+}
+
+class ConcreteBuilder{
+    + void buildPart1();
+    + void buildPart2();
+
+}
+
+class Product{
+}
+
+@enduml
