@@ -152,11 +152,112 @@ try {
   }
 ```
 		
-### 	利用interrupt() 来中断线程。
+## 	利用线程中断机制终止线程。
 
-      单单利用标志位结束一个线程，在某些情况下是非常完美的解决方案，而是线程进行了长时间的睡眠，调用了wait，joint时，就麻烦了，非常有可能进行长时间的阻塞，然后就不能检查标志位来停止一个线程了。关于这点，javaAPI提供一个方法 interrupt(),当线程调用该方法时，如果改线程内部调用了wait,sleep,joint 等等，处于阻塞状态时，就会抛出一个InterruptedException 异常，然后我们就有会在捕获这个异常后进行处理，并判断是否要退出线程，等等。ingerrupt 本身并不能中断一个线程，它能中断的阻塞，修改中断标志位等等。
-      
-      ###       利用stop()方法停止线程
-      很不幸该方法已经被弃用了。但是该方法还是 的的确确可以让线程立刻停止的。可是问题就是处在立刻停止上面了。就是Stop()让该线程义无反顾的停止了运行，没有丝毫的犹豫，这就带了很多的问题，让线程里的其他成员和开启线程的类非常的不舒服，比如我希望在任何时候，在线程结束以前都打印一条日志，如果用Stop()方法，就不可能打印那条日志了。如果我们打开一个File，一个Socket，我们希望在线程结束的时候，能够调用一下close方法。这也做不到了。所以还是尽可能的少用Stop()方法吧。
+可以利用标志位告诉线程需要终止，当线程检测到标志位的时候，就主动去停止运行，但是在很多时候线程进行了调用了sleep进入长时间的睡眠,或者调用了wait()、joint()进入长时间等待，这个时候线程就不能及时检测标志位，也不能及时停止线程的运行。这个时候就需要使用线程的中断机制来
+解决问题。Thread类中提供了下面有关线程中断机制的方法
+
+方法 | 含义
+--- | ---
+ public void interrupt() | 中断当前线程。
+ public boolean isInterrupted() | 检测是否已经发生了中断。
+ public static boolean interrupted() | 检测是否已经发生了中断，并清除中断状态。如果发生了中断返回true，接着访问就是false了。
+ 
+ 现在把上面的程序加入中断机制，在stopThread()方法中触发中断机制，然后Thread.sleep方法就会抛出InterruptedException，在异常处理中检测中断标志位，来决定线程是继续运行还是停止，最后的完整代码如下：
+ 
+ 
+```
+ /**
+ * yumodev
+ * 终止线程
+ */
+public class ThreadStop {
+   static class StopThread extends Thread{
+
+   private volatile  boolean mStop = false;
+
+   /**
+    * 设置中断标志位，并触发中断机制
+    */
+   public void stopThread(){
+       mStop = true;
+       //设置标志位后，立即中断线程。
+       interrupt();
+   }
+
+   /**
+    * 检测是否设置的终止标志
+    * @return
+    */
+   public boolean isStopThread(){
+       return mStop;
+   }
+
+   @Override
+   public void run() {
+       Random random = new Random(100);
+       while (true){
+           /**
+            * 如果检测到用户主动设置了停止标志，
+            * 那就停止运行。
+            */
+           if (isStopThread()){
+               break;
+           }
+
+           String content = readFromServer(random);
+           try {
+               Thread.sleep(5000);
+           } catch (InterruptedException e) {
+               e.printStackTrace();
+               //触发了线程中断
+               if (isStopThread()){
+                   break;
+               }
+           }
+
+           saveContent(content);
+       }
+   }
+
+   /**
+    * 从服务器读取数据
+    * @return
+    */
+   private String readFromServer(Random random){
+       return "content:" + random.nextInt(1000);
+   }
+
+   /**
+    * 将文件写入本地
+    * @param content
+    */
+   private void saveContent(String content) {
+       System.out.println("saveContent:"+content);
+   }
+}
+
+public static void testStopThread(){
+   StopThread thread = new StopThread();
+   thread.start();
+
+   try {
+       Thread.sleep(20000);
+   } catch (InterruptedException e) {
+       e.printStackTrace();
+   }
+
+   thread.stopThread();
+}
+
+public static void main(String[] args) {
+   testStopThread();
+	}
+}
+```
+## 参考
+
+* 《图解Java多线程设计模式》
+* [详细分析Java中断机制](http://www.infoq.com/cn/articles/java-interrupt-mechanism)
       
 
