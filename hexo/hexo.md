@@ -41,6 +41,22 @@ git clone https://github.com/iissnan/hexo-theme-next themes/next
 
 在_config.yml中的theme设置为：next
 
+## 部署
+
+* 安装插件： `npm install hexo-deployer-git`
+* 修改配置：
+
+
+```
+ deploy:
+  type: git
+  repository: https://github.com/zhiho/zhiho.github.io.git
+  branch: master
+```
+
+* 部署：`hexo deploy`
+
+
 
  
 
