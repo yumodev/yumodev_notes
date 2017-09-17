@@ -1,15 +1,15 @@
 <h1 align="center" >String 字符串的解析 </h1>
-    java String类是一个使用频率非常高的类。借助分析String类的源码，有助于更好的了解java中字符串的操作，写出更加有效率的代码。
+java String类是一个使用频率非常高的类。借助分析String类的源码，有助于更好的了解java中字符串的操作，写出更加有效率的代码。
     
-###     String 定义
-       public final class String implements Serializable, Comparable<String>, CharSequence｛｝
-       String首先是一个final类，它将不能被继承生成一个子类。String为什么要设置为final类型主要有2个方面的考虑。
-       1、处于安全性的考虑.String类是java中一个非常底层的类，和操作系统进行的频繁的交互。如果可以String类可以被继承，用户就可能会重写String类的相关方法，这就提供破坏操作系统提供了机会，降低了java的宣称的安全性。
-       2、效率的问题：String被定义为final类，那么它的所有方法都是final的，jvm编译器会内联所有的方法，此举可以让String类的效率使用50%，单凭这点就让人心动不已了。
-       
-       String类继承了Serializable ,所以String类是可序列化的。
-       String类继承了Comparable, 所以String可以在集合里面，直接用sort()排序。
-       String类继承实现了CharSequence ,所以String类本质上是一个字符序列。
+### String 定义
+  ` public final class String implements Serializable, Comparable<String>, CharSequence｛｝`
+   String首先是一个final类，它将不能被继承生成一个子类。String为什么要设置为final类型主要有2个方面的考虑。
+   1、处于安全性的考虑.String类是java中一个非常底层的类，和操作系统进行的频繁的交互。如果可以String类可以被继承，用户就可能会重写String类的相关方法，这就提供破坏操作系统提供了机会，降低了java的宣称的安全性。
+   2、效率的问题：String被定义为final类，那么它的所有方法都是final的，jvm编译器会内联所有的方法，此举可以让String类的效率使用50%，单凭这点就让人心动不已了。
+   
+   String类继承了Serializable ,所以String类是可序列化的。
+   String类继承了Comparable, 所以String可以在集合里面，直接用sort()排序。
+   String类继承实现了CharSequence ,所以String类本质上是一个字符序列。
        
 ###     String 成员变量
       //定义一个字符数组来存放 String的字符序列。
