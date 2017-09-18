@@ -1,8 +1,15 @@
-<h1 align="center" >反射-一个简单的实例应用 </h1>
+<h1 align="center" >反射入门详解 </h1>
 
-    反射就是通过一个类的名字或者实例，才操作它的属性和方法的机制。该机制在android开发中非常有用。因为android开发中很多API里的一些方法没有公开，就需要用反射机制才能使用它。
+## 什么是反射机制
+  
+  反射就是通过一个类的名字或者实例，操作它的属性和方法的机制。
+    
+## 反射可以实现什么功能以及应用场景
+
+## 生成类的实例
         
-###    什么是Class
+## 什么是Class
+
     我定义一个类的时候需要使用Class关机字。比如 Class A{};我们定义了一个名字为A的类对象，那么我们就可以理解为Class 就是类对象A的类型。这个想法有点抽象。
     Class类有两个重要的方法。
     getName(); 获取这个对象的名字。
@@ -263,5 +270,14 @@
 		getPrice 进入运行了
 		getPrice 进入运行了
 		通过反射修改后，书的价格为:100.0
+		
+## 参考
+
+* [知乎-学习java应该如何理解反射](https://www.zhihu.com/question/24304289)
+* [Java学习之反射机制及应用场景](http://www.cnblogs.com/whoislcj/p/6038511.html)
+* [玩转Java反射](http://blog.csdn.net/android_ku_ku/article/details/52336734)
+* [Java 基础与提高干货系列—Java 反射机制 ](http://tengj.top/2016/04/28/javareflect/)
+* [十分钟理解Java反射](http://www.jianshu.com/p/2efb2d1cbbc8)
+* [在Android中使用反射到底有多慢？](https://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&mid=402508341&idx=1&sn=960682c2cafea9702d55a879c6246c5b#rd)
 
 
