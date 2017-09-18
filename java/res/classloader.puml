@@ -1,0 +1,30 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+ClassLoder <|-- SecureClassLoader
+SecureClassLoader <|-- URLClassLoader
+URLClassLoader <|-- ExtClassLoader
+URLClassLoader <|-- AppClassLoader
+
+abstract class ClassLoader{
+# ClassLoader();
+# ClassLoader(ClassLoader parent)
+- ClassLoader(Void unused, ClassLoader parent)
++ Class<?> loadClass(String name)
+# Class<?> loadClass(String name, boolean resolve)
++ final ClassLoader getParent()
++ static ClassLoader getSystemClassLoader()
+}
+
+class SecureClassLoader{
+}
+
+class URLClassLoader{
+}
+
+class ExtClassLoader{
+}
+
+class AppClassLoader{
+}
+@enduml
