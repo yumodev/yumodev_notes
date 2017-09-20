@@ -9,13 +9,17 @@
   * mac : brew install graphviz
   * ubuntu : apt-get install graphviz
 
-  安装成功后查看dot的路径：
+安装成功后查看dot的路径：
 
-  $ ~ which dot
+
+```
+$ ~ which dot
   /usr/local/bin/dot
+```
 
 ### 下载Plantuml.jar
-  下载 [Plantuml.jar](https://sourceforge.net/projects/plantuml/?source=typ_redirect)
+ 
+ 下载 [Plantuml.jar](https://sourceforge.net/projects/plantuml/?source=typ_redirect)
 
   将Plantuml.jar 移动到/usr/local/share
 
@@ -35,8 +39,9 @@
 
 ### 创建测试文件 test.puml
 
-  ```
-  @startuml
+
+```
+ @startuml
   start
   :first;
   :second;
@@ -56,3 +61,5 @@
 ### 参考
 
   [PlantUML in ATOM](http://trevershick.github.io/atom/2015/12/04/plantuml-snippets.html)
+
+
