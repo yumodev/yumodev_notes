@@ -23,7 +23,7 @@ Andorid为每一个进程分配了一个独立的虚拟机，不同的虚拟机�
 多进程带来的问题：
 1、静态成员和单例模式完全失效。
 2、线程同步机制完全失效。
-3、SharePreferences的可靠性下降。
+**3、SharePreferences的可靠性下降。
 4、Application会多**次创建。
 
 # 2.3 IPC基础概念介绍。
