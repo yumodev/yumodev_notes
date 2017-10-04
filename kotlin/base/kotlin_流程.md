@@ -1,4 +1,4 @@
-# Kotlin中循环、判断、中断
+# Kotlin中循环、判断
 
 ## if
 
@@ -95,9 +95,58 @@ when {
    }
 }
 ```
-## for
+## for循环
 
-## while
+for循环可以对任何提供迭代器的对象进行遍历，也可以对数组、区间进行遍历：
 
-## do while
+```java
+//循环遍历区间
+for (item : Int in 1..10){
+   println(item)
+}
+
+//循环遍历数组
+val arr = arrayOf(1, 2, 3)
+for (item : Int in arr){
+   println(item)
+}
+
+//循环遍历List集合
+val list: MutableList<Int> = mutableListOf(1, 2, 3)
+for (item : Int in list){
+   println(item)
+}
+```
+
+Kotlin中提供了一个库函数withIndex()，配合for循环，就可以获取当前索引和值：
+
+```java
+
+ for ((index, value) in (1..10).withIndex()){
+      println("$index : $value")
+  }
+  
+   val arr = arrayOf(1, 2, 3)
+   for ((index, value) in arr.withIndex()){
+       println("$index : $value")
+   }
+```
+## while和do while循环
+
+while和do..while 循环的用法和java一样：
+
+```java
+//while遍历一个list
+val list: MutableList<Int> = mutableListOf(1, 2, 3)
+while(list.size > 0){
+   println(list.removeAt(0))
+}
+    
+//do while遍历一个list 
+val list: MutableList<Int> = mutableListOf(1, 2, 3)
+do {
+   println(list.removeAt(0))
+}while (list.size > 0)
+```
+
 
