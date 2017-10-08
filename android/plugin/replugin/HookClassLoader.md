@@ -108,4 +108,33 @@ public static boolean patch(Application application) {
 
 ```
 
+## loadClass
+
+
+```
+@Override
+    protected Class<?> loadClass(String className, boolean resolve) throws ClassNotFoundException {
+        //
+        Class<?> c = null;
+        c = PMF.loadClass(className, resolve);
+        if (c != null) {
+            return c;
+        }
+        //
+        try {
+            c = mOrig.loadClass(className);
+            // 只有开启“详细日志”才会输出，防止“刷屏”现象
+            if (LogDebug.LOG && RePlugin.getConfig().isPrintDetailLog()) {
+                LogDebug.d(TAG, "loadClass: load other class, cn=" + className);
+            }
+            return c;
+        } catch (Throwable e) {
+            //
+        }
+        //
+        return super.loadClass(className, resolve);
+    }
+
+```
+
 
