@@ -122,7 +122,8 @@ print len(listOne)  # 3
 
 ### 追加元素 append(x)
 
-通过list的append()方法可以在列表的尾部插入一个元素
+通过list的append(x)方法可以在列表的尾部插入一个元素。
+x可以为任意类型，也可以为一个列表。
 
 ```python
 listOne = [1, 2, 3]
@@ -130,10 +131,80 @@ listOne.append(4)
 print listOne  # [1, 2, 3, 4]
 ```
 
-除了append()方法以后还有以下几种方法在尾部插入一个元素
+
+### 插入元素 insert(i,x)
+
+insert(i,x)方法的作用是将元素x插入到列表中位置i处。
+参数i：标识将元素插入到列表的位置。
+
+当i = 0 或 i = -len(L)的时候，将在列表的投入插入元素
+当i = len(L)的时候，将在列表的尾部插入元素作用等同于append(x)方法
+```python
+# 在列表起始位置插入
+listOne = range(3)
+listOne.insert(0, -1)
+print listOne  # [-1, 0, 1, 2]
+listOne = range(3)
+listOne.insert(-len(listOne), -1)
+print listOne  # [-1, 0, 1, 2]
+# 在列表末尾插入和append(x)方法作用一样。
+listOne = range(3)
+listOne.insert(len(listOne), 3)
+print listOne  # [0, 1, 2, 3]
+```
+
+### 追加一个新列表-extend(L)
+
+extend(L)可以将一个新列表的元素追个的添加到原列表中。
 
 
+```python
+print 'extend(L) 添加一个新链表'
+listOne = range(3)  # [0, 1, 2]
+listTwo = range(3, 6)  # [3, 4, 5]
+listOne.extend(listTwo)
+print listOne # [0, 1, 2, 3, 4, 5]
+```
 
+append(x)或者insert(i,x)方法都可以追加或者插入一个新列表，但是它们是将新列表当做一个元素插入的，通过下面的列子看下它们的区别
+
+
+```python
+# 通过append(x)方法追加一个列表
+listOne = range(3)  # [0, 1, 2]
+listTwo = range(3, 6)  # [3, 4, 5]
+listOne.append(listTwo)
+print listOne  # [0, 1, 2, [3, 4, 5]]
+
+# 通过insert(i, x)方法在尾部插入一个新列表
+listOne = range(3)  # [0, 1, 2]
+listTwo = range(3, 6)  # [3, 4, 5]
+listOne.insert(len(listOne), listTwo)
+print listOne  # [0, 1, 2, [3, 4, 5]]
+```
+
+### 反转列表-reverse()方法
+
+通过reverse()方法，可以将在列表内将元素反转，不生成新的列表。
+
+在Python中存在一个内置函数reversed(L)可以将序列进行反转，生成一个新的列表。注意和list的reverse()方法的区别。
+
+下面是这两种用法的例子
+
+
+```python
+# list.reverse()方法反转原列表，不生成新的列表
+listOne = range(3)
+listOne.reverse()
+print listOne  # [2, 1, 0]
+
+
+# 内置函数reversed(seq)反转序列，生成一个新的序列。
+listOne = range(3)
+listTwo = list(reversed(listOne))
+print listTwo  # [2, 1, 0]
+print listOne == listTwo  # False
+```
 ## 元组-tuple
 
 ### tuple
