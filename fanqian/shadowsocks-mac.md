@@ -1,4 +1,5 @@
 <h1 align="center" >Mac终端下使用ShadowScoks </h1>
+
 ### Provixy
 
 #### 安装 Provixy
@@ -38,25 +39,38 @@ Or, if you don't want/need a background service you can just run:
 
 #### 配置
 
-    sudo vi /usr/local/etc/privoxy/config
+   
+``` 
+sudo vi /usr/local/etc/privoxy/config
 
-    中间可找到本地的http接口二选一
-    listen-address 127.0.0.1:8118（只能本机访问）
-    listen-address 0.0.0.0:8118()
+中间可找到本地的http接口二选一
+listen-address 127.0.0.1:8118（只能本机访问）
+listen-address 0.0.0.0:8118()
 
-    末尾输入
-    forward-socks5 / 127.0.0.1:1080 .
+末尾输入
+forward-socks5 / 127.0.0.1:1080 .
 
+```
 ### 启动Provixy
 
-    /usr/local/sbin/privoxy /usr/local/etc/privoxy/config
+ ` /usr/local/sbin/privoxy /usr/local/etc/privoxy/config`
 
 ### 验证启动成功与否
 
-    netstat -an | grep 8118
-    ps aux  | grep privoxy
+   
+``` 
+netstat -an | grep 8118
+ps aux  | grep privoxy
+```
 
-### 配置Terminal的http走811端口
+### 停止运行
+
+
+```
+sudo killall privoxy
+```
+
+### 配置Terminal的http走8118端口
 
 
 ```
@@ -81,5 +95,6 @@ unset https_proxy
 
  *  [使用Privoxy做智能代理切换](http://blog.devtang.com/2012/12/08/use-privoxy/)
  *  [Mac上通过Privoxy将shadowsocks的流量使用pac代理给手机iOS安卓](http://www.akmumu.com/2015/07/07/367.html)
+ *  [Mac上配置Privoxy](http://www.cnblogs.com/DeviLeo/p/6033591.html)
 
 
