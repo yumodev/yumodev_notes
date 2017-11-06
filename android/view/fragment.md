@@ -66,6 +66,22 @@ Fragment是Activity的一个组成部分，它有着自己的生命周期和接�
     如果前一个Fragment不在回收站，那么其将被销毁。
     如果前一个Fragment已经放入回退栈，那么其实例不会销毁，但是视图层次仍旧会销毁。即调用了onDestoryView和onCreateView.
     
+  
+## Frangment的isAdded(),isDetached(),isHidden()方法
+  
+  * isAdded()
+  
+	Fragment已经加入到了Activity中，返回true，否则返回false。
+	
+  * isDetached()
+
+  Fragment已经从UI分离，返回true。
+
+  * isHidden()
+
+  fragment对象被隐藏返回true。
+  
+  
     
 ## tips
     
