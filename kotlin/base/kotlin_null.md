@@ -1,27 +1,27 @@
-# Kotlin中变量、常量以及空安全机制
+# Kotlin中变量、常量以及空安全
 
-## 变量和常量
+## Kotlin的可空类型
 
-在Kotlin中使用关键字`var`声明一个变量，使用`val`声明一个常量声明格式为`var 变量名 : 变量类型 = 值 `
-下面声明一个字符串变量`a`和一个字符串常量`b`，并设置初始值
+在以往的Java开发中有一个著名的异常NullPointerException，俗称NPE，它由访问为空的属性引发，为此Kotlin中引入了可空类型，旨在有效消除NPE异常的发生。
 
+在定义变量的的时候在其类型的后面加上一个问号表示该变量是可空类型，可以赋予其null值。比如
+
+
+```java
+//定义可空变量，并赋予null值
+var a: String?
+a = null
+    
+//定义一个非空变量，赋予null值的发生错误
+var b: String
+b = null // Null can not be a value of a non-null type String
 ```
-var a : String = "a";//声明一个变量a，并设置初始值。
-val b : String = "b";//声明一个常量b，并设置初始值。
-```
 
-在Kotlin中变量和常量的类型是可以省略的，编译期对自动推断出来变量和常量类型，在上面的列子中，可以声明如下：
+## 安全调用可空类型
 
-```
-var a = "a";
-val b = "b";
-```
+假定通过` var a: String? = "abc"`创建了一个可空的变量a，那么该如何调用变量。
 
-## Kotlin 空安全
 
-NullPointerException,俗称NPE，在以往的Java开发中，这是一个非常著名的异常。Kotlin 的设计目标就是希望消除代码中 null 引用带来的危险。
-
-### 关于空指针异常
 
 ### Kotlin控安全
 
