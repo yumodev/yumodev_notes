@@ -131,6 +131,7 @@
 ### View和控件
 
 * [View](./android/view/view.md)
+* [触摸事件分发和拦截](./android/view/事件分发源码.md)
 * [Fragment](./android/view/fragment.md)
 * [动画](./android/view/Animation.md)
 * [LayoutTransition](./android/view/LayoutTransition.md)
