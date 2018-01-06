@@ -47,8 +47,6 @@ private void init(ThreadGroup var1, Runnable var2, String var3, long var4, Acces
 也可以在Thread的构造函数中设置其名字。如果程序没有主动给线程设置名字，那么
 JVM也为线程设置一个默认的名字
 
-多个线程可以设置相同的名称，所以线程的名字不能唯一的标识一个线程。
-
 
 ```
  public final synchronized void setName(String var1) {
@@ -70,5 +68,5 @@ JVM也为线程设置一个默认的名字
 
 ```
 
-### State 线程状态
+### 获取线程状态
 
