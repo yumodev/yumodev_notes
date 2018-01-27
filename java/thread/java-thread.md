@@ -68,5 +68,38 @@ JVM也为线程设置一个默认的名字
 
 ```
 
-### 获取线程状态
+### 获取线程状态-getState()
+
+通过getState()获取线程的状态。在Thread类中通过一个枚举定义了6种线程状态
+
+
+```java
+ public static enum State {
+    NEW,
+    RUNNABLE,
+    BLOCKED,
+    WAITING,
+    TIMED_WAITING,
+    TERMINATED;
+
+    private State() {
+    }
+}
+```
+
+* NEW-新线程
+
+  新建的线程，在线程调用start()方法以前的状态
+  
+* RUNNABLE-可运行状态
+
+  线程调用start()方法启动线程以后，进入该状态，表示该线程可以运行。
+  
+* BLOCKED-阻塞状态
+
+* WAITING-等待状态
+
+* TIMED_WAITING-定时等待状态
+
+* TERMINATED-终止状态
 
