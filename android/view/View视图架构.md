@@ -1,8 +1,10 @@
+
 ## 视图架构
 
 * Activity
   
-  Activity不负责视图的控制，只是控制生命周期和处理事件。真正控制视图的是Window。
+  Activity并不不负责视图的绘制，只是控制生命周期和处理事件。真正控制视图的是Window。
+  
   如果Activity没有Widnow就相当于Service了。
   
   * Window
