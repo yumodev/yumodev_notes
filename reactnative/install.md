@@ -59,7 +59,13 @@ brew install watchman
 adb logcat *:S ReactNative:V ReactNativeJS:V
 ```
 
+## 升级ReactNative
 
+`react-native upgrade`
+
+## 调试
+
+当代码修改完成保存以后，ReactNative会检测到代码发生变化以后，会立即针对改变 进行编译。通过手机的menu键或者摇晃手机弹出调试菜单，选择'Relaod JavaScript'
 ## tips
 
 ### init失败
@@ -238,6 +244,13 @@ npm ERR!     /Users/trunx/.npm/_logs/2017-09-10T05_20_15_338Z-debug.log
   status: 1 }
 Command `npm install --save --save-exact react-native` failed.
 Test-Mac:rn trunx$
+```
+
+### 连接不上Genymotion
+
+
+```
+在电脑中查看该网址是否可以打开：https://localhost:8081/index.android.bundle?platform=android
 ```
 
 
