@@ -53,6 +53,9 @@
 * [Web开发面试题目](./interview/web.md)
 * [算法面试题目](./interview/算法.md)
 
+## 面试一些笔记
+
+* [单例模式-Singleton](./pattern/singleton_pattern.md)
 ## Java
 
 ### Java基础
