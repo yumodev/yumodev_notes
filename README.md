@@ -99,8 +99,11 @@
 * [集合类](./java/collect/collect_class.md)
 * [Collect](./java/collect/collect.md)
 * [HashMap](./java/collect/hashMap.md)
+* [HashMap源码解析-Java7](./java/collect/HashMap源码解析-Java7.md)
 * [LinkedHashMap使用和LRU的实现](./java/collect/linkedhashmap_lru.md)
 * [List](./java/collect/list.md)
+* [ArrayList-Java7](./java/collect/ArrayList-Java7.md)
+* [CopyOnWriteArrayList](./java/collect/CopyOnWriteArrayList.md)
 * [集合总结](./java/collect/java集合.md)
 
 ### IO和字符串
@@ -211,6 +214,10 @@
 ### RxJava
 
 * [Tips](./android/rxjava/tips.md)
+
+### 架构
+
+* [MVP](./android/Architect/mvp.md)
 
 ## JavaScript
 
