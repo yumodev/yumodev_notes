@@ -90,6 +90,7 @@
 * [Synchronized](./java/thread/Synchronized.md)
 * [BlockQueue](./java/thread/BlockQueue.md)
 * [线程池](./java/thread/thread_pool.md)
+* [ThreadPoolExecutor源码分析](./java/thread/ThreadPoolExecutor.md)
 * [ThreadFactory](./java/thread/ThreadFactory.md)
 * [多线程面试](./java/thread/thread_面试.md)
 
@@ -132,7 +133,7 @@
 * [Binder总结](./android/framework/Binder.md)
 * [AIDL总结](./android/framework/AIDL.md)
 * [Handler总结](./android/framework/Handler.md)
-* [AsyncTask总结](./android/framework/AsyncTask.md)
+
 
 ### View和控件
 
@@ -194,6 +195,8 @@
 * [Android多进程](./android/thread/Android多进程.md)
 * [Android进程](./android/thread/Android进程.md)
 * [Android线程](./android/thread/Android线程.md)
+* [AsyncTask总结](./android/thread/AsyncTask.md)
+* [AsyncTask源码](./android/framework/AsyncTask源码.md)
 
 ### 多媒体开发
 
