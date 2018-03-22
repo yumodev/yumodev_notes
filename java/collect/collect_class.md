@@ -1,4 +1,4 @@
-### java结合类
+## java集合类
 
 ### list
 
@@ -26,6 +26,7 @@
 
 
 ### Queue
+
 * AbstractQueue<K,V>
 * PriorityQueue<E>
 * ArrayDeque<E>
@@ -40,6 +41,7 @@
 
 * Collects
 * Arrays
+
 ### 其他
 
 * HashTable<K,V>

@@ -32,7 +32,6 @@
      
 ``` 
 long maxMemory = Runtime.getRuntime().maxMemory();
-
 ```     
 
 

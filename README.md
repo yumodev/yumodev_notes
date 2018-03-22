@@ -208,9 +208,14 @@
 * [WebSettings](./android/browser/WebSettings.md)
 * [WebView详解](./android/browser/webview.md)
 
+
 ### RxJava
 
 * [Tips](./android/rxjava/tips.md)
+
+### OkHttp
+
+* [OkHttp拦截器](./android/okhttp/拦截器.md)
 
 ## JavaScript
 
@@ -254,6 +259,8 @@
 * [代理模式-Proxy](./pattern/proxy_pattern.md)
 * [装饰器模式-Decorator](./pattern/decorator_pattern.md)
 * [观察者模式-Observable](./pattern/observable_pattern.md)
+* [责任链模式-Chain](./pattern/chain_pattern.md)
+* [适配器模式-Adapter](./pattern/adapter_pattern.md)
 
 ## 网络
 
