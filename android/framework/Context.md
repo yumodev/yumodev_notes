@@ -9,6 +9,7 @@ Context的意思是上下文或者情景。在安卓开发中到处到处都会�
 * ContentResolver getContentResolver();
 
 ### 获取资源
+
 * AssetManager getAssets();
 * Resources getResources();
 * final CharSequence getText(@StringRes int resId)
@@ -17,10 +18,12 @@ Context的意思是上下文或者情景。在安卓开发中到处到处都会�
 * final Drawable getDrawable(@DrawableRes int id)
 * final ColorStateList getColorStateList(@ColorRes int id)
 
-### 
-* public abstract void setTheme(@StyleRes int resid);
+### Theme
+
+*  public abstract void setTheme(@StyleRes int resid);
 *  public int getThemeResId()
 *  public abstract Resources.Theme getTheme();
+
 ### 其他
 
  * public abstract PackageManager getPackageManager();
@@ -37,6 +40,9 @@ Context的意思是上下文或者情景。在安卓开发中到处到处都会�
 ### 一个App中可以有几个Context 实例。
 
 Activity+Service+1
+
+
+## ContextImpl
 
 
 ## 参考

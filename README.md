@@ -90,6 +90,7 @@
 * [Synchronized](./java/thread/Synchronized.md)
 * [BlockQueue](./java/thread/BlockQueue.md)
 * [线程池](./java/thread/thread_pool.md)
+* [ThreadPoolExecutor源码分析](./java/thread/ThreadPoolExecutor.md)
 * [ThreadFactory](./java/thread/ThreadFactory.md)
 * [多线程面试](./java/thread/thread_面试.md)
 
@@ -99,8 +100,11 @@
 * [集合类](./java/collect/collect_class.md)
 * [Collect](./java/collect/collect.md)
 * [HashMap](./java/collect/hashMap.md)
+* [HashMap源码解析-Java7](./java/collect/HashMap源码解析-Java7.md)
 * [LinkedHashMap使用和LRU的实现](./java/collect/linkedhashmap_lru.md)
 * [List](./java/collect/list.md)
+* [ArrayList-Java7](./java/collect/ArrayList-Java7.md)
+* [CopyOnWriteArrayList](./java/collect/CopyOnWriteArrayList.md)
 * [集合总结](./java/collect/java集合.md)
 
 ### IO和字符串
@@ -129,7 +133,7 @@
 * [Binder总结](./android/framework/Binder.md)
 * [AIDL总结](./android/framework/AIDL.md)
 * [Handler总结](./android/framework/Handler.md)
-* [AsyncTask总结](./android/framework/AsyncTask.md)
+
 
 ### View和控件
 
@@ -191,6 +195,8 @@
 * [Android多进程](./android/thread/Android多进程.md)
 * [Android进程](./android/thread/Android进程.md)
 * [Android线程](./android/thread/Android线程.md)
+* [AsyncTask总结](./android/thread/AsyncTask.md)
+* [AsyncTask源码](./android/framework/AsyncTask源码.md)
 
 ### 多媒体开发
 
@@ -213,9 +219,15 @@
 
 * [Tips](./android/rxjava/tips.md)
 
+
 ### OkHttp
 
 * [OkHttp拦截器](./android/okhttp/拦截器.md)
+
+### 架构
+
+* [MVP](./android/Architect/mvp.md)
+
 
 ## JavaScript
 
