@@ -16,7 +16,23 @@
 
 ### 查看目录大小
 
-du -hs *
+`du -hs *`
+
+### 触摸板单机无效
+
+`killall Dock`
+
+### 触摸板失效
+
+* [导致 MacBook 触摸板手势突然失效的原因有哪些？](https://www.zhihu.com/question/21868694)
+* 重置NVRAM
+
+同时按开机键+Option+Command+P+R 听到3-4声后，松手。
+
+* 重置SMC
+
+  关闭电脑，连接上电源同时按下：左侧Shift+Control+Option+开关机键，十秒后松开。
+
 
 
 

@@ -2,6 +2,7 @@
 ##安装virtualenv
 
 * sudo easy_install virtualenv
+* sudo easy_install pip
 * sudo pip install virtualenv
 
 ## 创建一个项目文件夹 python/venv
