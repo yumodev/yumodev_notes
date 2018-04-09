@@ -7,7 +7,7 @@
 
 ## 服务的两种启动方式
 
-* context.startServic()
+* context.startService()
 
     调用者和服务没有关联，就是调用着推出了，服务依然可以运行。它时启动服务，用stopService()停止服务，该该服务启动后，和一个Activity绑定了，还需要unBindService服务才能退出。
 
