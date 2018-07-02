@@ -94,6 +94,7 @@ Intent.EXTRA_STREAM:附件
 
 
 ### 常用Intent的实现列子
+
 * 浏览器
    
 ``` 

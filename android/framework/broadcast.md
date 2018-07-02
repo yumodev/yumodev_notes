@@ -1,5 +1,6 @@
 ## 什么是广播
-   接收来自系统和应用中的广播。
+   
+接收来自系统和应用中的广播。
    
 ## 注册广播有几种方式 有何优缺点
 
@@ -7,6 +8,7 @@
 * 在代码中进行注册。动态。应用程序关闭后，就不会在接受到广播了。优点就是动态的注册和取消广播，但是缺点是必须在程序启动以后才能注册和取消广播。
      
 ### 广播的生命周期。
+
 广播在onRecive后就自动停止广播了，这个可能停止掉，所以不能在onRecive里进行长时间的操作。应该在onrecieve里面新建立一个线程或者服务进行长时间的此奥做。
 
 ### 广播的种类
@@ -43,5 +45,109 @@ abortBroadcast(); 截断广播，不在发送。
  
  //反注册广播  localBroadcastManager.unregisterReceiver(localReceiver);
 ```
+
+## 常用广播
+
+* Intent.ACTION_USER_PRESENT - android.intent.action.USER_PRESENT 
+
+  屏幕解锁
+  
+* android.intent.action.SCREEN_ON
+
+ 开屏
+
+* android.intent.action.SCREEN_OFF
+
+锁屏
+
+* android.intent.action.CLOSE_SYSTEM_DIALOGS
+
+关闭系统对话框
+
+* android.intent.action.BOOT_COMPLETED
+
+开机启动
+
+* android.net.conn.CONNECTIVITY_CHANGE
+
+网络变化
+
+* android.intent.action.TIME_SET
+
+改变时间,重新设置
+
+* android.intent.action.DATE_CHANGED
+
+日期发生改变
+
+* android.intent.action.TIMEZONE_CHANGED
+
+改变时区
+
+* android.intent.action.TIME_TICK_ACTION
+* android.intent.action.TIME_TICK
+
+当前时间已经变化
+
+* android.intent.action.PACKAGE_ADDED
+
+新安装一个APP
+
+* android.intent.action.PACKAGE_REMOVED
+
+删除一个APP
+
+* android.intent.action.PACKAGE_REPLACED
+
+替换一个APP
+
+* android.intent.action.BATTERY_CHANGED_ACTION
+* android.intent.action.BATTERY_CHANGED
+
+电量发生变化
+
+* android.intent.action.MEDIA_BAD_REMOVAL
+
+扩展卡从sd卡槽诶拔出.
+
+* android.intent.action.MEDIA_EJECT
+
+想要移除扩展介质
+
+* android.intent.action.MEDIA_REMOVED
+
+扩展介质被移除
+
+* android.intent.action.MEDIA_SCANNER_FINISHED
+
+扫描完介质
+
+* android.intent.action.MEDIA_SCANNER_STARTED
+
+开始扫描介质
+
+* android.intent.action.MEDIA_SHARED
+
+扩展介质被解除
+
+* android.intent.action.MEDIA_UNMOUNTED
+
+扩展介质存在,但是还没有挂在
+
+* android.intent.action.MEDIA_MOUNTED
+
+扩展介质被插入.
+
+* android.intent.action.ACTION_POWER_CONNECTED
+
+充电
+
+* android.intent.action.ACTION_POWER_DISCONNECTED
+
+断电
+
+## 参考
+
+* [Android Intent Action汇总](https://blog.csdn.net/bbenskye/article/details/50995519)
 
 

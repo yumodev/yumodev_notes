@@ -141,6 +141,10 @@
  adb shell dumpsys activity prov
 ```
 
+## BroadcastRecord-广播
+
+`adb shell dumpsys |grep BroadcastRecord`
+
 ## 进程、CPU、内存信息
 
 * cpu信息
