@@ -2,25 +2,14 @@
 
 
 * [google source](https://source.android.com/setup/)
+* [清华大学镜像](https://mirror.tuna.tsinghua.edu.cn/help/AOSP/)
+* [Android 6.0 源码编译 on Mac](https://www.jianshu.com/p/4b303c6325e3)
+* [MacOS 10.13.3 Android源码编译发生的那些事儿](https://blog.csdn.net/qq_25333681/article/details/79838325)
+* [Mac 10.12 编译 Android 源码](https://blog.csdn.net/chen930724/article/details/57086494)
+* [Android源码编译和调试](https://blog.csdn.net/hwliu51/article/details/75949060)
 * [macOS（Sierra 10.12）上Android源码（AOSP）的下载、编译与导入到Android Studio](http://blog.bihe0832.com/macOS-AOSP.html)
-* [MAC下载编译Android源码及BUG](https://blog.csdn.net/dengjiamingcsu/article/details/79695657)
-* [Establishing a Build Environment](https://source.android.com/source/initializing.html#setting-up-a-mac-os-x-build-environment)
-* [Can not find SDK 10.6 at /Developer/SDKs/MacOSX10.6.sdk](http://stackoverflow.com/questions/31589866/running-aosp-build-on-mac-yosemite-and-later)
-* [搭建编译环境](https://source.android.com/setup/initializing)
-* [macOS（Sierra 10.12）上Android源码（AOSP）的下载、编译与导入到Android Studio](http://blog.bihe0832.com/macOS-AOSP.html)
-* [MacOS（Sierra 10.13.3）上Android源码（AOSP）的下载、编译与导入到Android Studio2018-03-05](https://www.jianshu.com/p/d8a49556b49d)
-* [下载源代码](https://source.android.com/source/downloading)
-* [下载前配置环境](https://source.android.com/source/initializing#setting-up-a-mac-os-x-build-environment)
-* [Android源码的下载、编译与导入到Android Studio](http://wl9739.github.io/2016/05/09/Android%E6%BA%90%E7%A0%81%E7%9A%84%E4%B8%8B%E8%BD%BD%E3%80%81%E7%BC%96%E8%AF%91%E4%B8%8E%E5%AF%BC%E5%85%A5%E5%88%B0Android-Studio/)
-* [mac 10.13 编译 Android源码](https://www.jianshu.com/p/35f840dd7869)
-* [Mac编译android源码中遇到的坑](https://juejin.im/post/5a3d2104f265da4311206809)
-* [compiling trouble -->new SDK MacOS make it impossible!!!](https://groups.google.com/a/chromium.org/forum/#!topic/chromium-dev/fD4eSEYFR20)
-* [Android源码编译排坑](https://blog.csdn.net/qilamaxiu/article/details/79627588)
-* [Mac 10.13.4下载编译Android 8.1.0源码流程及问题记录](https://www.jianshu.com/p/ff37e58b0615)
-* [自己动手编译Android 8.0源码](https://blog.csdn.net/dl6655/article/details/78869501)
-* [Android8.0源码编译填坑之路](https://blog.csdn.net/qq_25564621/article/details/80253983)
-* [Mac上编译并运行Android5.0源码](https://www.cnblogs.com/whj198579/p/4458525.html)
-* [编译、运行源码](https://weichao.io/2017/10/15/%E7%BC%96%E8%AF%91%E3%80%81%E8%BF%90%E8%A1%8C%E6%BA%90%E7%A0%81/)
+* [Xcode 更改默认版本 xcode-select](https://blog.csdn.net/HPYON/article/details/69569102)
+* [Android 源码下载、编译、调试、烧写](https://fanzai.me/post/android-kernel/)
 
 ## 准备工作
 
@@ -75,19 +64,19 @@ chmod a+x ~/bin/repo
 
   
 ```
-mkdir android8
-cd android8
+mkdir android6
+cd android6
 ```
 
 * 初始化
 
 
-`repo init -u https://aosp.tuna.tsinghua.edu.cn/platform/manifest -b android-8.0.0_r13`
+`repo init -u https://aosp.tuna.tsinghua.edu.cn/platform/manifest -b android-6.0.1_r46`
 
-`repo init -u https://android.googlesource.com/platform/manifest -b android-8.0.0_r17`
+`repo init -u https://android.googlesource.com/platform/manifest -b android-6.0.1_r46`
 [查看分支](https://source.android.com/source/build-numbers#source-code-tags-and-builds)
 
-`repo init -u https://aosp.tuna.tsinghua.edu.cn/platform/manifest -b android-8.0.0_r13`
+`repo init -u https://aosp.tuna.tsinghua.edu.cn/platform/manifest -b android-6.0.1_r46`
 
 提示警告：
 
@@ -108,25 +97,12 @@ warning: Installing it is strongly encouraged.
 ```
 #!/bin/bash
 PATH=~/bin:$PATH
-repo init -u https://aosp.tuna.tsinghua.edu.cn/platform/manifest -b android-8.0.0_r13
+repo init -u https://aosp.tuna.tsinghua.edu.cn/platform/manifest -b android-6.0.1_r46
 repo sync
 while [ $? = 1 ]; do
 echo "================sync failed, re-sync again ====="
 sleep 3
-repo sync
-done
-```
-
-
-```
-#!/bin/bash
-PATH=~/bin:$PATH
-repo init -u https://android.googlesource.com/platform/manifest -b android-8.0.0_r17
-repo sync
-while [ $? = 1 ]; do
-echo "================sync failed, re-sync again ====="
-sleep 3
-repo sync
+repo sync j4
 done
 ```
 
@@ -216,6 +192,7 @@ machdep.cpu.thread_count: 8
 
 * 开始编译
 
+`make clobber`
 `make -j16`
 
 
@@ -289,27 +266,28 @@ Build
   tar -xvf  ***.tar
   mkdir ~/ymlib
   sudo ln -s ~/ymlib/MacOSX10.11.sdk /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk
+  
+  * java 版本的问题
+
+  
+```
+============================================
+Checking build tools versions...
+************************************************************
+You are attempting to build with the incorrect version
+of java.
+ 
+Your version is: java version "1.6.0_45" Java(TM) SE Runtime Environment (build 1.6.0_45-b06) Java HotSpot(TM) 64-Bit Server VM (build 20.45-b01, mixed mode).
+The required version is: "1.7.x"
+ 
+Please follow the machine setup instructions at
+    https://source.android.com/source/initializing.html
+************************************************************
+build/core/main.mk:171: *** stop。 停止。
+```
 ### 启动
 
 emulator
-
-./out/host/darwin-x86/bin/emulator -partition-size 2048 -kernel ./prebuilts/qemu-kernel/arm/kernel-qemu-armv7
-
-./prebuilts/android-emulator/darwin-x86_64/emulator -partition-size 2048 -kernel ./prebuilts/qemu-kernel/arm/kernel-qemu-armv7
-
-./prebuilts/android-emulator/darwin-x86_64/emulator -partition-size 2560 -kernel ./prebuilts/qemu-kernel/arm64/3.18/kernel-qemu2
-
-./prebuilts/android-emulator/darwin-x86_64/emulator -partition-size 2048 -kernel ./prebuilts/qemu-kernel/arm/3.18/kernel-qemu2
-
-emulator -system system.img -data userdata.img -ramdisk ramdisk.img -partition-size 2048 -skin WVGA854
-
-emulator64-arm -system system.img -data userdata.img -ramdisk ramdisk.img -partition-size 2560 -skin WVGA854
-
-#### bug
-
-* emulator: WARNING: system partition size adjusted to match image file (2048 MB > 200 MB)
-
- emulator -partition-size 2048
 
 ### 导入Android Studio
 
@@ -335,16 +313,6 @@ emulator64-arm -system system.img -data userdata.img -ramdisk ramdisk.img -parti
 POSIXLY_CORRECT=1 sudo port uninstall gnupg1
 POSIXLY_CORRECT=1 sudo port install gmake libsdl git gnupg2
 ```
-
-
-### 切换版本的清理工作
-
-
-1、在源码目录的根目录下，make clean;
-
-2、进到源码的\linux\kernel\目录下，执行make mrproper；
-
-3、再退回到根目录，执行./sourcebuild/envsetup.sh,lunch,make.
   
 
 
