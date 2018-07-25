@@ -108,12 +108,12 @@ warning: Installing it is strongly encouraged.
 ```
 #!/bin/bash
 PATH=~/bin:$PATH
-repo init -u https://aosp.tuna.tsinghua.edu.cn/platform/manifest -b android-8.0.0_r13
-repo sync
+repo init -u https://aosp.tuna.tsinghua.edu.cn/platform/manifest -b android-7.0.0_r1
+repo sync -j4
 while [ $? = 1 ]; do
 echo "================sync failed, re-sync again ====="
 sleep 3
-repo sync
+repo sync -j4
 done
 ```
 
@@ -122,11 +122,11 @@ done
 #!/bin/bash
 PATH=~/bin:$PATH
 repo init -u https://android.googlesource.com/platform/manifest -b android-8.0.0_r17
-repo sync
+repo sync -j4
 while [ $? = 1 ]; do
 echo "================sync failed, re-sync again ====="
 sleep 3
-repo sync
+repo sync -j4
 done
 ```
 
@@ -264,12 +264,12 @@ make: *** [run_soong_ui] Error 1
 Patch [bison fix](https://android-review.googlesource.com/c/platform/external/bison/+/517740) for High Sierra and build bison:
 
     1. cd /Volumes/android8/external/bison
-    2. git cherry-pick c0c852bd6fe462b148475476d9124fd740eba160
+##     2. git cherry-pick c0c852bd6fe462b148475476d9124fd740eba160
     3. mm
 
 Replace prebuilt bison binary with patched binary
 
-    1. cp /Volumes/android/android8/out/host/darwin-x86/bin/bison /Volumes/android/android8/prebuilts/misc/darwin-x86/bison/
+###     1. cp /Volumes/android/android8/out/host/darwin-x86/bin/bison /Volumes/android/android8/prebuilts/misc/darwin-x86/bison/
 
 Build
 
