@@ -253,7 +253,7 @@ Patch [bison fix](https://android-review.googlesource.com/c/platform/external/bi
 
 Replace prebuilt bison binary with patched binary
 
-    1. cp /Volumes/android/android8/out/host/darwin-x86/bin/bison /Volumes/android/android8/prebuilts/misc/darwin-x86/bison/
+    1. cp /Volumes/android/aosp/out/host/darwin-x86/bin/bison /Volumes/android/aosp/prebuilts/misc/darwin-x86/bison/
 
 Build
 
@@ -273,6 +273,10 @@ Build
   tar -xvf  ***.tar
   mkdir ~/ymlib
   sudo ln -s ~/ymlib/MacOSX10.11.sdk /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk
+  
+  * ninja: error: 'out/host/darwin-x86/obj/SHARED_LIBRARIES/libc++_intermediates/export_includes', needed by 'out/host/darwin-x86/obj/STATIC_LIBRARIES/libbison_intermediates/import_includes', missing and no known rule to make it
+make: *** [ninja_wrapper] Error 1
+
 ### 启动
 
 emulator

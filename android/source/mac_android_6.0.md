@@ -76,7 +76,7 @@ cd android6
 `repo init -u https://android.googlesource.com/platform/manifest -b android-6.0.1_r46`
 [查看分支](https://source.android.com/source/build-numbers#source-code-tags-and-builds)
 
-`repo init -u https://aosp.tuna.tsinghua.edu.cn/platform/manifest -b android-6.0.1_r46`
+`repo init -u https://aosp.tuna.tsinghua.edu.cn/platform/manifest -b android-6.0.1_r63`
 
 提示警告：
 

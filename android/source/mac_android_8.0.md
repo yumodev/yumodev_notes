@@ -87,7 +87,7 @@ cd android8
 `repo init -u https://android.googlesource.com/platform/manifest -b android-8.0.0_r17`
 [查看分支](https://source.android.com/source/build-numbers#source-code-tags-and-builds)
 
-`repo init -u https://aosp.tuna.tsinghua.edu.cn/platform/manifest -b android-8.0.0_r13`
+`repo init -u https://aosp.tuna.tsinghua.edu.cn/platform/manifest -b android-8.0.0_r17`
 
 提示警告：
 
@@ -137,6 +137,13 @@ done
 * 下载完成
 
 可以删除.repo文件
+
+## 使用最新包下载
+
+curl -o aosp.tar https://mirrors.tuna.tsinghua.edu.cn/aosp-monthly/aosp-latest.tar
+tar zxvf  aosp.tar -C /Volumes/android/
+repo init -u https://aosp.tuna.tsinghua.edu.cn/platform/manifest -b android-8.0.0_r13
+repo sync -j4
 
 ## 编译
 
