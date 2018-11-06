@@ -43,7 +43,14 @@
 
 
 ```
-PermissionChecker.checkPermission
+int permissionCheck = ContextCompat.checkSelfPermission(thisActivity,
+        Manifest.permission.WRITE_CALENDAR);
+```
+返回值：
+
+```
+PackageManager.PERMISSION_GRANTED：已授权
+PackageManager.PERMISSION_DENIED：未授权
 ```
 
 ## 申请权限
@@ -53,6 +60,12 @@ PermissionChecker.checkPermission
 requestPermissions
 ```
 
+## 检测请求状态
+
+`shouldShowRequestPermissionRationale()`
+true：如果应用请求过改权限，但是用户拒绝了改方法就会返回true。
+false：如果用户之前拒绝了请求同时勾选了不再询问就会返回false。
+
 ## 参考
 
 * [Android权限管理之Permission权限机制及使用](http://www.cnblogs.com/whoislcj/p/6072718.html)
@@ -61,6 +74,7 @@ requestPermissions
 * [Android权限管理原理（4.3-6.0）](https://juejin.im/post/5878dc9d1b69e6006bdc0536)
 * [Android6.0权限封装](https://blog.csdn.net/u014005316/article/details/60466047)
 * [RxPermissions获取运行时权限](https://www.jianshu.com/p/314e9e27592f)
+* [Android权限管理详解](https://blog.csdn.net/shangmingchao/article/details/70312824)
 
 
 
