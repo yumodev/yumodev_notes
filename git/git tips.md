@@ -19,6 +19,16 @@ git push --mirror https://git.coding.net/disheng/todo.git
 * shh-add ~/.ssh/key
 * ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 
+### http方式记住密码
+
+* mac
+
+`git config --global credential.helper osxkeychain`
+
+* window
+
+`git config --global credential.helper wincred`
+
 
 
 

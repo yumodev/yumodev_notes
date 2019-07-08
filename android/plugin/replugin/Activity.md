@@ -3,29 +3,29 @@
 ## RePlugin.startActivity
 
 
-```
+```java
 /**
-     * 开启一个插件的Activity <p>
-     * 其中Intent的ComponentName的Key应为插件名（而不是包名），可使用createIntent方法来创建Intent对象
-     *
-     * @param context Context对象
-     * @param intent  要打开Activity的Intent，其中ComponentName的Key必须为插件名
-     * @return 插件Activity是否被成功打开？
-     * FIXME 是否需要Exception来做？
-     * @see #createIntent(String, String)
-     * @since 1.0.0
-     */
-    public static boolean startActivity(Context context, Intent intent) {
-        // TODO 先用旧的开启Activity方案，以后再优化
-        ComponentName cn = intent.getComponent();
-        if (cn == null) {
-            // TODO 需要支持Action方案
-            return false;
-        }
-        String plugin = cn.getPackageName();
-        String cls = cn.getClassName();
-        return Factory.startActivityWithNoInjectCN(context, intent, plugin, cls, IPluginManager.PROCESS_AUTO);
+ * 开启一个插件的Activity <p>
+ * 其中Intent的ComponentName的Key应为插件名（而不是包名），可使用createIntent方法来创建Intent对象
+ *
+ * @param context Context对象
+ * @param intent  要打开Activity的Intent，其中ComponentName的Key必须为插件名
+ * @return 插件Activity是否被成功打开？
+ * FIXME 是否需要Exception来做？
+ * @see #createIntent(String, String)
+ * @since 1.0.0
+ */
+public static boolean startActivity(Context context, Intent intent) {
+    // TODO 先用旧的开启Activity方案，以后再优化
+    ComponentName cn = intent.getComponent();
+    if (cn == null) {
+        // TODO 需要支持Action方案
+        return false;
     }
+    String plugin = cn.getPackageName();
+    String cls = cn.getClassName();
+    return Factory.startActivityWithNoInjectCN(context, intent, plugin, cls, IPluginManager.PROCESS_AUTO);
+}
 ```
 
 ## com.qihoo360.loader2.PluginLibraryInternalProxy

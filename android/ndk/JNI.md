@@ -34,11 +34,9 @@ JNINativeMetiod的结构
 
 ```c++
 typedef struct{
-
 	const char* name;//Java中函数的名字，不包含包的路径。
 	const char* signature;//Java的签名信息，用字符串表示。
 	void* fnPtr; //JNI层函数的函数指针，注意它是void* 类型。
-
 }
 ```
 

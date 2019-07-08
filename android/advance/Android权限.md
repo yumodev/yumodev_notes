@@ -36,7 +36,7 @@
 | | android.permission.READ_CELL_BROADCASTS| 写SD卡权限
 | 日历  | android.permission.READ_CALENDAR | 读取日历 
 |   | android.permission.WRITE_CALENDAR | 设置日历 
-| 传感器  | android.permission.BODY_SENSORS | 设置日历 
+| 传感器  | android.permission.BODY_SENSORS | 传感器 
 
 
 ## 查看权限获取

@@ -21,7 +21,7 @@
 #### ANR 日志分析
 
 * 分析log。
-* adb pull data/anr/trace.txt ./mytraces.txt
+* adb pull data/anr/traces.txt ./mytraces.txt
 
 #### ANR工具分析
 

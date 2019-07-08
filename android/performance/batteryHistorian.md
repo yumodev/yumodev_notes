@@ -2,8 +2,6 @@
 
     5.0 引用。
     图形化数据分析工具。
-
-
 ### 1.0
 #### 初始化
 
@@ -39,3 +37,5 @@ go run cmd/battery-historian/battery-historian.go [--port <default:9999>]
 ### 分析
 
 Device estimated power use : 电量使用
+
+
